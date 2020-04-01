@@ -117,4 +117,18 @@ public class Employee {
 	public long getId() {
 		return id;
 	}
+	
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", birthDate=" + birthDate
+				+ ", birthPlace=" + birthPlace + ", gender=" + gender + ", maritalStatus=" + maritalStatus
+				+ ", confession=" + confession + ", adress=" + adress + ", residence=" + residence + ", postCode="
+				+ postCode + "]";
+	}
 }

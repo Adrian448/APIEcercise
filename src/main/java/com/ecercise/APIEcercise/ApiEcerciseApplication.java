@@ -8,7 +8,6 @@ public class ApiEcerciseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiEcerciseApplication.class, args);
-		CreateDB db = new CreateDB();
 	}
 
 }

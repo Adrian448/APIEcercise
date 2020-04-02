@@ -16,7 +16,7 @@ public class EmployeeService {
 	 
 	 static
 	    {
-	        employeeList.getEmployeeList().add(new Employee(1, "Lokesh", "Gupta", new Date((long) 03.01), "howtodoinjava@gmail.com", "j j", "njnk", "jj", "jjn", "jnn", "jnj"));
+	        employeeList.getEmployeeList().add(new Employee(1, "vorname", "nachname", new Date((long) 03.01), "klef", "j j", "njnk", "jj", "jjn", "jnn", "jnj"));
 	    }
 	 public void addEmployee(Employee employee) {
 	        employeeList.getEmployeeList().add(employee);

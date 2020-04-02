@@ -28,6 +28,9 @@ public class Employee {
 	private String residence;
 	private String postCode;
 
+	public Employee() {
+		
+	}
 	public Employee(long id, String firstName, String lastName, Date birthDate, String birthPlace, String gender, String maritalStatus, String confession,
 			String adress, String residence, String postCode) {
 		this.id = id;

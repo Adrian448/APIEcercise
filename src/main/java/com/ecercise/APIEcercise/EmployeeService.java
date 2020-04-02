@@ -1,24 +1,38 @@
 package com.ecercise.APIEcercise;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
 
+import com.ecercise.repository.EmployeeRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import com.ecercise.entitys.Employee;
 import com.ecercise.restservice.Employees;
-@Repository
+@Service
 public class EmployeeService {
 	
-	private static Employees employeeList = new Employees();
-	 public Employees getAllEmployees() {
-		 return employeeList;
-	 }
-	 
-	 static
-	    {
-	        employeeList.getEmployeeList().add(new Employee(1, "vorname", "nachname", new Date((long) 03.01), "klef", "j j", "njnk", "jj", "jjn", "jnn", "jnj"));
-	    }
-	 public void addEmployee(Employee employee) {
-	        employeeList.getEmployeeList().add(employee);
-	    }
-}
+	private EmployeeRepository employeeRepository;
+	
+	public List getAllEmployees() {
+		List employees = new ArrayList<>();
+		employeeRepository.findAll().forEach(employees::add);
+		return employees;
+	}
+	
+	
+	public Employee getEmployee(String id) {
+		return (Employee) employeeRepository.findById(id).orElseGet(Employee::new);
+	}
+	public void addEmployee (Employee employee) {
+		employeeRepository.save(employee);
+	}
+	
+	public void deleteEmployee(String id) {
+		employeeRepository.deleteById(id);
+	}
+	
+	}
